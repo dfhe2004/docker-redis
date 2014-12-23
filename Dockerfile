@@ -1,5 +1,5 @@
-FROM sameersbn/ubuntu:14.04.20141218
-MAINTAINER sameer@damagehead.com
+FROM debain:wheezy
+MAINTAINER somebody@somewhere.com   # just test
 
 RUN apt-get update \
  && apt-get install -y redis-server \
