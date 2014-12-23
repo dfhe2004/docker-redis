@@ -1,4 +1,4 @@
-FROM debain:wheezy
+FROM debian:wheezy
 MAINTAINER somebody@somewhere.com   # just test
 
 RUN apt-get update \
