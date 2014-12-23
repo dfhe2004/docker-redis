@@ -11,6 +11,8 @@ RUN echo "deb http://http.us.debian.org/debian unstable main contrib non-free" >
 
 RUN sed 's/^bind 127.0.0.1/bind 0.0.0.0/' -i /etc/redis/redis.conf \
  && sed 's/^# unixsocket /unixsocket /' -i /etc/redis/redis.conf \
+ && sed 's/^# maxmemory /maxmemory 1024mb /' -i /etc/redis/redis.conf \
+ && sed 's/^# maxmemory-policy /maxmemory-policy /' -i /etc/redis/redis.conf \
  && sed 's/^notify-keyspace-events "" /notify-keyspace-events Ex /' -i /etc/redis/redis.conf \
  && sed '/^logfile/d' -i /etc/redis/redis.conf
 
