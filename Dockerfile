@@ -12,7 +12,7 @@ RUN sed 's/^daemonize yes/daemonize no/' -i /etc/redis/redis.conf \
  && sed 's/^# unixsocket /unixsocket /' -i /etc/redis/redis.conf \
  && sed 's/^# maxmemory <bytes>/maxmemory 1024mb /' -i /etc/redis/redis.conf \
  && sed 's/^# maxmemory-policy /maxmemory-policy /' -i /etc/redis/redis.conf \
- && sed 's/^notify-keyspace-events "" /notify-keyspace-events Ex /' -i /etc/redis/redis.conf \
+ && sed 's/^notify-keyspace-events \"\"/notify-keyspace-events Ex /' -i /etc/redis/redis.conf \
  && sed '/^logfile/d' -i /etc/redis/redis.conf
 
 ADD start /start
